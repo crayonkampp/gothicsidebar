@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝖈𝖗𝖆𝖞𝖔𝖓𝖘 - Gothic Chess Club</title>
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <div class="sidebar-container">
+        <!-- Fog background -->
+        <div class="fog-background"></div>
+        
+        <!-- Main sidebar -->
+        <div class="gothic-sidebar">
+            <!-- Header with club icon and name -->
+            <header class="cathedral-header">
+                <div class="candle-left"></div>
+                <div class="header-content">
+                    <img src="https://images.chesscomfiles.com/uploads/v1/group/958168.4a3c6e94.160x160o.b94bb5053e50@2x.jpg" alt="Crayons Club" class="club-icon">
+                    <h1 class="club-name">𝖈𝖗𝖆𝖞𝖔𝖆𝖘</h1>
+                    <p class="club-tagline">Gothic Chess Temple</p>
+                    <div class="club-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Active</span>
+                    </div>
+                </div>
+                <div class="candle-right"></div>
+            </header>
+
+            <!-- Navigation tabs -->
+            <nav class="cathedral-nav">
+                <button class="nav-tab active" data-tab="overview">📊 Overview</button>
+                <button class="nav-tab" data-tab="events">🏆 Events</button>
+                <button class="nav-tab" data-tab="members">👥 Members</button>
+                <button class="nav-tab" data-tab="news">📜 News</button>
+            </nav>
+
+            <!-- Main content sections -->
+            <div class="cathedral-content">
+                
+                <!-- Overview Tab -->
+                <section class="temple-section tab-content active" id="overview">
+                    <div class="section-banner">
+                        <h2 class="stone-text">🏰 Temple Overview</h2>
+                    </div>
+                    <div class="section-body">
+                        <!-- Quick Stats -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">👥</div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="member-count">247</div>
+                                    <div class="stat-label">Members</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🎮</div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="game-count">1284</div>
+                                    <div class="stat-label">Games Played</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🏅</div>
+                                <div class="stat-info">
+                                    <div class="stat-value" id="tournament-count">12</div>
+                                    <div class="stat-label">Tournaments</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Featured Section -->
+                        <div class="featured-box">
+                            <h3 class="featured-title">⭐ Featured Event</h3>
+                            <div class="featured-event">
+                                <div class="event-badge">LIVE NOW</div>
+                                <h4>Weekly Rapid Championship</h4>
+                                <p class="event-description">Join our prestigious rapid tournament. Best players compete for glory!</p>
+                                <div class="event-details">
+                                    <span class="detail-item">⏱️ 15 min + 10 sec</span>
+                                    <span class="detail-item">👥 32 Players</span>
+                                </div>
+                                <a href="https://www.chess.com/clubs/events/group-acb706281e609176a77d0ee6f3165a83" class="cta-button" target="_blank">
+                                    Join Tournament
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Quick Access -->
+                        <div class="quick-access">
+                            <h3 class="section-title">🔗 Quick Access</h3>
+                            <a href="https://www.chess.com/club/group-acb706281e609176a77d0ee6f3165a83/announcements" class="quick-link-item" target="_blank">
+                                <span class="link-icon">📋</span>
+                                <span class="link-text">Announcements</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                            <a href="https://www.chess.com/clubs/events/group-acb706281e609176a77d0ee6f3165a83" class="quick-link-item" target="_blank">
+                                <span class="link-icon">🎯</span>
+                                <span class="link-text">All Events</span>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Events Tab -->
+                <section class="temple-section tab-content" id="events">
+                    <div class="section-banner">
+                        <h2 class="stone-text">🏆 Upcoming Events</h2>
+                    </div>
+                    <div class="section-body events-list" id="events-list">
+                        <div class="loading-spinner">Loading events...</div>
+                    </div>
+                </section>
+
+                <!-- Members Tab -->
+                <section class="temple-section tab-content" id="members">
+                    <div class="section-banner">
+                        <h2 class="stone-text">👥 Top Members</h2>
+                    </div>
+                    <div class="section-body members-list" id="members-list">
+                        <div class="loading-spinner">Loading members...</div>
+                    </div>
+                </section>
+
+                <!-- News Tab -->
+                <section class="temple-section tab-content" id="news">
+                    <div class="section-banner">
+                        <h2 class="stone-text">📜 Latest News</h2>
+                    </div>
+                    <div class="section-body news-list" id="news-list">
+                        <div class="loading-spinner">Loading news...</div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="cathedral-footer">
+                <div class="footer-candle"></div>
+                <div class="footer-content">
+                    <p class="footer-text">In the Gothic Temple of Chess</p>
+                    <div class="footer-meta">
+                        <span class="footer-link">Last updated: <span id="last-update">now</span></span>
+                    </div>
+                </div>
+                <div class="footer-candle"></div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="scripts/sidebar.js"></script>
+</body>
+</html>
