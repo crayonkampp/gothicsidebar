@@ -1,0 +1,238 @@
+/* Animation Effects - Candle Flicker, Fog Drift, and Glows */
+
+/* Candle Flicker Animation */
+@keyframes flicker {
+    0%, 100% {
+        height: 20px;
+        filter: drop-shadow(0 0 8px var(--candle-glow)) drop-shadow(0 0 16px var(--candle-orange));
+    }
+    25% {
+        height: 18px;
+        filter: drop-shadow(0 0 6px var(--candle-glow)) drop-shadow(0 0 12px var(--candle-orange));
+    }
+    50% {
+        height: 22px;
+        filter: drop-shadow(0 0 10px var(--candle-glow)) drop-shadow(0 0 20px var(--candle-orange));
+    }
+    75% {
+        height: 19px;
+        filter: drop-shadow(0 0 7px var(--candle-glow)) drop-shadow(0 0 14px var(--candle-orange));
+    }
+}
+
+/* Fog Drifting Animation */
+@keyframes fog-drift {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(10px) translateY(5px);
+    }
+    50% {
+        transform: translateX(0) translateY(10px);
+    }
+    75% {
+        transform: translateX(-10px) translateY(5px);
+    }
+}
+
+/* Club Icon Pulse */
+@keyframes icon-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px var(--candle-glow),
+            inset 0 0 15px rgba(212, 175, 55, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px var(--candle-glow),
+            inset 0 0 20px rgba(212, 175, 55, 0.5),
+            0 0 40px var(--stained-glass-amber);
+        transform: scale(1.02);
+    }
+}
+
+/* Club Name Glow */
+@keyframes name-glow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px var(--candle-glow),
+            0 2px 4px rgba(0, 0, 0, 0.8);
+        color: var(--text-accent);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px var(--candle-glow),
+            0 0 30px var(--stained-glass-amber),
+            0 2px 4px rgba(0, 0, 0, 0.8);
+        color: #ffff99;
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 8px var(--status-active);
+    }
+    50% {
+        box-shadow: 0 0 12px var(--status-active);
+    }
+}
+
+/* Breathing animation for sidebar */
+@keyframes breathing {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.02);
+    }
+}
+
+.gothic-sidebar {
+    animation: breathing 8s ease-in-out infinite;
+}
+
+/* Smooth entry animations */
+.cathedral-header {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cathedral-nav {
+    animation: slideDown 0.5s ease-out 0.1s both;
+}
+
+.temple-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.temple-section:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.temple-section:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.temple-section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.temple-section:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.cathedral-footer {
+    animation: slideUp 0.5s ease-out 0.3s both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered list item animations */
+.event-item:nth-child(1),
+.member-item:nth-child(1),
+.news-item:nth-child(1) {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.event-item:nth-child(2),
+.member-item:nth-child(2),
+.news-item:nth-child(2) {
+    animation: slideInRight 0.4s ease-out 0.1s both;
+}
+
+.event-item:nth-child(3),
+.member-item:nth-child(3),
+.news-item:nth-child(3) {
+    animation: slideInRight 0.4s ease-out 0.2s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Spin animation for loading */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+    .gothic-sidebar {
+        border-radius: 0;
+    }
+}
+
+/* Print styles */
+@media print {
+    .fog-background,
+    .candle-left,
+    .candle-right {
+        display: none;
+    }
+    
+    .gothic-sidebar {
+        box-shadow: none;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-accent: #ffff00;
+    }
+    
+    .temple-section {
+        border-width: 2px;
+    }
+}
